@@ -36,14 +36,17 @@ namespace dcf77 {
         return decodeNumber(bits, 45, 4)
     }
 
+    /**
+     * Decode the year value
+     * @param bits received
+     */
+    //% block
     export function decodeYear (bits: number[]) {
         return decodeNumber(bits, 50, 7)
     }
     /**
-     * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
+     * Convert number to 0 padded string
+     * @param n number to convert
      */
     //% block
     export function convert(n: number): string {
