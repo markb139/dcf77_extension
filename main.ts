@@ -1,14 +1,3 @@
-
-/**
- * Use this file to define custom functions and blocks.
- * Read more at https://makecode.microbit.org/blocks/custom
- */
-
-
-/**
- * Custom blocks
- */
-//% weight=100 color=#0fbc11 icon=""
 namespace dcf77 {
     const mult: number[] = [1, 2, 4, 8, 10, 20, 40, 80]
 
@@ -20,18 +9,38 @@ namespace dcf77 {
         return ret
     }
 
+    /**
+     * Decode the minute value
+     * @param bits received
+     */
+    //% block
     export function decodeMinute (bits: number[]) {
         return decodeNumber(bits, 21, 6)
     }
 
+    /**
+     * Decode the hour value
+     * @param bits received
+     */
+    //% block
     export function decodeHour (bits: number[]) {
        return decodeNumber(bits, 29, 5)
     }
 
+    /**
+     * Decode the day value
+     * @param bits received
+     */
+    //% block
     export function decodeDay (bits: number[]) {
         return decodeNumber(bits, 36, 5)
     }
 
+    /**
+     * Decode the month value
+     * @param bits received
+     */
+    //% block
     export function decodeMonth (bits: number[]) {
         return decodeNumber(bits, 45, 4)
     }
