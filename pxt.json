@@ -2,7 +2,8 @@
     "name": "dcf77_extension",
     "description": "",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "microphone": "*"
     },
     "files": [
         "main.blocks",

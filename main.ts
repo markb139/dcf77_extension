@@ -1,7 +1,7 @@
 namespace dcf77 {
     const mult: number[] = [1, 2, 4, 8, 10, 20, 40, 80]
 
-    function decodeNumber (bits: number[], offset: number, count: number) {
+    function decodeNumber (bits: number[], offset: number, count: number): number {
         let ret = 0
         for (let i = 0; i <= count; i++) {
             ret = ret + mult[i] * bits[i + offset]
@@ -14,7 +14,7 @@ namespace dcf77 {
      * @param bits received
      */
     //% block
-    export function decodeMinute (bits: number[]) {
+    export function decodeMinute (bits: number[]): number {
         return decodeNumber(bits, 21, 6)
     }
 
@@ -65,5 +65,19 @@ namespace dcf77 {
         else {
             return convertToText(n)
         }
+    }
+    /**
+     * Start the decoder
+     */
+    //% block
+    export function start(){
+        pins.digitalWritePin(DigitalPin.P2, 0)
+    }
+    /**
+     * Stop the decoder
+     */
+    //% block
+    export function stop(){
+        pins.digitalWritePin(DigitalPin.P2, 1)
     }
 }
